@@ -4,6 +4,10 @@ import pool from "./db.js";
 
 dotenv.config();
 
+app.use(cors({
+  origin: "*",
+}));
+
 const PORT = process.env.PORT || 5000;
 
 pool.query("SELECT NOW()")
