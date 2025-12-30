@@ -8,9 +8,12 @@ The project focuses on backend correctness, professional frontend UX, and the im
 ## Setup Steps
 
 Prerequisites
-- Node.js (v18 or above recommended)
+- Node.js 
 - PostgreSQL
-- npm or yarn
+- npm 
+- jwt,bcrypt
+- express
+- validation
 
 
 1. Backend Setup
@@ -18,19 +21,23 @@ Prerequisites
 1.1 Navigate to the backend directory:
 
 cd backend
+
 npm install
 
 
 1.2 Create a .env file in the backend folder:
 
 PORT=5000
+
 DATABASE_URL="postgresql://postgres:password@localhost:5433/UGAssignment"
-JWT_SECRET=supersecretkey
+
+JWT_SECRET=UGAssignmentSecretKey
 
 
 1.3 Start the server:
 
 npm run dev
+
 The backend will run on http://localhost:5000
 
 
@@ -40,6 +47,7 @@ The backend will run on http://localhost:5000
 2.1 Navigate to the frontend directory:
 
 cd frontend
+
 npm install
 
 
@@ -51,39 +59,26 @@ The frontend will run on http://localhost:5173
 
 
 
-
 ## API List
 
 
 1. Authentication
-
-Method           Endpoint                   Description
-
-POST           /auth/register         Register a new support agent
-
-POST           /auth/login           Login and receive a JWT token
-
+   
+POST/auth/register    
+POST/auth/login           
 
 2. Tickets
-
-Method          Endpoint                    Description
-
-GET            /tickets       Get paginated list of tickets (supports filters/search)
-
-GET           /tickets/:id         Get full details of a single ticket
-
-PATCH         /tickets/:id          Update ticket status and priority
-
-DELETE        /tickets/:id                Delete a ticket
+   
+GET/tickets      
+GET/tickets/:id         
+PATCH/tickets/:id
+DELETE/tickets/:id                
 
 
 3. Internal Notes
-
-Method          Endpoint                      Description
-
-GET         /tickets/:id/notes       Get all internal notes for a specific ticket
-
-POST        /tickets/:id/notes       Add a new internal note to a ticket
+   
+GET/tickets/:id/notes       
+POST/tickets/:id/notes       
 
 
 
