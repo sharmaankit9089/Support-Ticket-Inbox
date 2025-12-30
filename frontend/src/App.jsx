@@ -4,6 +4,13 @@ import Register from "./auth/Register";
 import Inbox from "./pages/Inbox";
 import ProtectedRoute from "./auth/ProtectedRoute";
 
+useEffect(() => {
+    fetch(${import.meta.env.VITE_API_URL}/api/hello)
+      .then(res => res.json())
+      .then(data => setMsg(data.message))
+      .catch(err => console.error(err));
+  }, []);
+
 function App() {
   return (
     <BrowserRouter>
