@@ -6,7 +6,6 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
-// test db connection
 pool.query("SELECT NOW()")
   .then(res => console.log("DB connected"))
   .catch(err => console.error("DB connection failed", err));

@@ -36,7 +36,6 @@ const Inbox = () => {
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow">
 
-        {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <div className="bg-[#5389f5] text-white px-4 py-2 rounded-lg text-lg font-semibold">
             Ticket Inbox
@@ -53,7 +52,6 @@ const Inbox = () => {
           </button>
         </div>
 
-        {/* Filters */}
         <div className="flex gap-3 mb-4">
           <select
             className="border rounded-lg px-3 py-2"
@@ -94,12 +92,10 @@ const Inbox = () => {
           />
         </div>
 
-        {/* Loading */}
         {isLoading && (
           <p className="text-gray-500 text-sm mb-2">Loading tickets…</p>
         )}
 
-        {/* Table */}
         <table className="w-full border rounded-lg overflow-hidden">
           <thead className="bg-gray-100">
             <tr>
@@ -151,7 +147,6 @@ const Inbox = () => {
           </tbody>
         </table>
 
-        {/* Pagination */}
         <div className="flex justify-between items-center mt-4">
           <button
             onClick={() => setPage((p) => Math.max(p - 1, 1))}

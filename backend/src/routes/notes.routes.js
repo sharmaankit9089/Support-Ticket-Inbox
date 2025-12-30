@@ -5,17 +5,12 @@ import errorResponse from "../utils/errorResponse.js";
 
 const router = express.Router();
 
-/**
- * Utility: basic HTML strip
- */
+
 const sanitize = (text) => {
   return text.replace(/<[^>]*>?/gm, "");
 };
 
-/**
- * GET /tickets/:id/notes
- * latest first
- */
+
 router.get("/tickets/:id/notes", authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
@@ -38,9 +33,7 @@ router.get("/tickets/:id/notes", authMiddleware, async (req, res) => {
   }
 });
 
-/**
- * POST /tickets/:id/notes
- */
+
 router.post("/tickets/:id/notes", authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;

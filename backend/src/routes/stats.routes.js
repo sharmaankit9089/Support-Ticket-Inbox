@@ -5,17 +5,13 @@ import errorResponse from "../utils/errorResponse.js";
 
 const router = express.Router();
 
-/**
- * GET /stats
- */
+
 router.get("/stats", authMiddleware, async (req, res) => {
   try {
-    // total tickets (excluding soft-deleted)
     const totalResult = await pool.query(
       "SELECT COUNT(*) FROM tickets WHERE deleted_at IS NULL"
     );
 
-    // status counts
     const statusResult = await pool.query(
       `
       SELECT status, COUNT(*) 
@@ -25,7 +21,6 @@ router.get("/stats", authMiddleware, async (req, res) => {
       `
     );
 
-    // high priority count
     const highPriorityResult = await pool.query(
       `
       SELECT COUNT(*) 

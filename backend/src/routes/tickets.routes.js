@@ -5,10 +5,7 @@ import errorResponse from "../utils/errorResponse.js";
 
 const router = express.Router();
 
-/**
- * GET /tickets
- * pagination + filters + search
- */
+
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const { page = 1, limit = 10, status, priority, search } = req.query;
@@ -53,9 +50,7 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 
-/**
- * GET /tickets/:id
- */
+
 router.get("/:id", authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
@@ -76,16 +71,12 @@ router.get("/:id", authMiddleware, async (req, res) => {
   }
 });
 
-/**
- * PATCH /tickets/:id
- * update status + priority only
- */
+
 router.patch("/:id", authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
     const { status, priority } = req.body;
 
-    // ✅ EARLY VALIDATION (IMPORTANT)
     if (status === undefined && priority === undefined) {
       return errorResponse(res, "Nothing to update", 400);
     }
@@ -115,9 +106,7 @@ router.patch("/:id", authMiddleware, async (req, res) => {
 });
 
 
-/**
- * DELETE /tickets/:id (soft delete)
- */
+
 router.delete("/:id", authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;

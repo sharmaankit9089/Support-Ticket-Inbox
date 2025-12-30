@@ -6,9 +6,8 @@ import errorResponse from "../utils/errorResponse.js";
 
 const router = express.Router();
 
-/**
- * REGISTER
- */
+
+ 
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -17,7 +16,6 @@ router.post("/register", async (req, res) => {
       return errorResponse(res, "All fields required");
     }
 
-    // check existing user
     const existing = await pool.query(
       "SELECT id FROM users WHERE email = $1",
       [email]
@@ -47,9 +45,8 @@ router.post("/register", async (req, res) => {
   }
 });
 
-/**
- * LOGIN
- */
+
+
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
