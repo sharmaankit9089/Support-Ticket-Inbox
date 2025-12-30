@@ -4,6 +4,10 @@ A professional full-stack support management application built as part of a tech
 
 The project focuses on backend correctness, professional frontend UX, and the implementation of real-world patterns like server-side pagination and optimistic state management.
 
+## To Test
+username: ankit@gmail.com
+
+password: 123456
 
 ## Setup Steps
 
