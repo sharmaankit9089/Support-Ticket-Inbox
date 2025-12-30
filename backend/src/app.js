@@ -8,7 +8,11 @@ import statsRoutes from "./routes/stats.routes.js";
 const app = express();
 
 app.use(cors({
-  origin: "*",
+  origin: [
+    "https://support-ticket-inbox-mp91.vercel.app",
+    "http://localhost:5173" // for local development
+  ],
+  credentials: true
 }));
 app.use(express.json());
 app.use("/auth", authRoutes);
