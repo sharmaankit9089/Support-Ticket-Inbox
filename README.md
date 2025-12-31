@@ -5,6 +5,9 @@ A professional full-stack support management application built as part of a tech
 The project focuses on backend correctness, professional frontend UX, and the implementation of real-world patterns like server-side pagination and optimistic state management.
 
 ## To Test
+
+**USE THESE CREDENTIALS TO ACCESS 50+ TICKETS**
+
 username: ankit@gmail.com
 
 password: 123456
@@ -31,9 +34,11 @@ npm install
 
 1.2 Create a .env file in the backend folder:
 
+**USE THESE PARAMETERS TO ACCESS MY DATABASE WITH 50 TICKETS**
+
 PORT=5000
 
-DATABASE_URL="postgresql://postgres:password@localhost:5433/UGAssignment"
+DATABASE_URL="postgresql://postgres:An90k89it@localhost:5433/UGAssignment"
 
 JWT_SECRET=UGAssignmentSecretKey
 
